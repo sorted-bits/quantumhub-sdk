@@ -1,4 +1,14 @@
+import { Logger } from './logger';
+
 export interface Provider {
+  /**
+   * The logger created specific for this device
+   *
+   * @type {Logger}
+   * @memberof ModuleProvider
+   */
+  get logger(): Logger;
+
   /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
    *

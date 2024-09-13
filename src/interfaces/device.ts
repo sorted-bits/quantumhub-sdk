@@ -1,8 +1,7 @@
-import { Logger } from './logger';
 import { Provider } from './provider';
 
 export interface Device {
-  init(provider: Provider, logger: Logger): Promise<boolean>;
+  init(provider: Provider): Promise<boolean>;
   start(): Promise<void>;
   stop(): Promise<void>;
   destroy(): Promise<void>;
