@@ -8,4 +8,5 @@ export interface Device {
   destroy(): Promise<void>;
 
   valueChanged(attribute: string, value: any): Promise<void>;
+  onMessage(topic: string, message: Buffer): Promise<void>;
 }
