@@ -5,7 +5,7 @@ export interface Provider {
    * The logger created specific for this device
    *
    * @type {Logger}
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   get logger(): Logger;
 
@@ -14,7 +14,7 @@ export interface Provider {
    *
    * @param {string} attribute The name of the attribute
    * @param {*} value The value of the attribute
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   setAttributeValue(attribute: string, value: any): Promise<void>;
 
@@ -22,7 +22,7 @@ export interface Provider {
    * Sets the availability of the device and publishes the changes to MQTT
    *
    * @param {boolean} availability The availability of the device
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   setAvailability(availability: boolean): Promise<void>;
 
@@ -30,7 +30,7 @@ export interface Provider {
    * Returns the configuration of the device as defined in the configuration file
    *
    * @returns {*} The configuration of the device
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   getConfig(): any;
 
@@ -39,7 +39,7 @@ export interface Provider {
    *
    * @param {string} topic The topic to subscribe to
    * @returns {Promise<void>}
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   subscribeToTopic(topic: string): Promise<void>;
 
@@ -50,7 +50,7 @@ export interface Provider {
    * @param {string} message The message to publish
    * @param {boolean} retain Whether the message should be retained
    * @returns {Promise<void>}
-   * @memberof ModuleProvider
+   * @memberof Provider
    */
   publishToTopic(topic: string, message: string, retain: boolean): Promise<void>;
 }

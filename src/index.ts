@@ -1,5 +1,4 @@
-export { Device } from "./interfaces/device";
-export { Logger } from "./interfaces/logger";
-export { ModuleConfig } from "./interfaces/module-config";
-export { Provider } from "./interfaces/provider";
-
+export { Device } from './interfaces/device';
+export { Logger } from './interfaces/logger';
+export { PackageConfig } from './interfaces/package-config';
+export { Provider } from './interfaces/provider';
