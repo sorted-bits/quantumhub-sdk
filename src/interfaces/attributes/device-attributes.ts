@@ -16,6 +16,11 @@ export interface DeviceAutomationAttribute extends BaseAttribute {
   payload: string;
 }
 
+export interface DeviceTrackerAttribute extends BaseAttribute {
+  type: DeviceType.device_tracker;
+  source_type?: 'gps' | 'router' | 'bluetooth' | 'bluetooth_le';
+}
+
 export interface SwitchAttribute extends BaseAttribute {
   type: DeviceType.switch;
   payload_on: string;
@@ -36,4 +41,4 @@ export interface SelectAttribute extends BaseAttribute {
   options: string[];
 }
 
-export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute;
+export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute;
