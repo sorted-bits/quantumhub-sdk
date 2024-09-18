@@ -53,4 +53,23 @@ export interface Provider {
    * @memberof Provider
    */
   publishToTopic(topic: string, message: string, retain: boolean): Promise<void>;
+
+  /**
+   * Sets a timeout that will be cleared when the timeout is triggered
+   * All these timeouts are stored in the provider and will be cleared when the device is stopped
+   *
+   * @param {() => void} callback The callback to trigger
+   * @param {number} timeout The timeout in milliseconds
+   * @returns {NodeJS.Timeout} The timeout ID
+   * @memberof Provider
+   */
+  setTimeout(callback: () => void, timeout: number): NodeJS.Timeout;
+
+  /**
+   * Clears a timeout that was previously set
+   *
+   * @param {NodeJS.Timeout} timeout The timeout ID
+   * @memberof Provider
+   */
+  clearTimeout(timeout: NodeJS.Timeout): void;
 }
