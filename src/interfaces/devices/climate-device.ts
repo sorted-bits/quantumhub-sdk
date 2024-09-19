@@ -32,6 +32,8 @@ export interface ClimateDevice extends BaseDevice {
   swingModes?: string[]; // Default: ['off', 'on']
   swingMode?: string;
 
+  action?: string;
+
   /*
   hvacMode: string;
   climateMode: string;
