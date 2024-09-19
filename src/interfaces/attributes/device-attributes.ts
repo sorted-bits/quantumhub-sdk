@@ -41,4 +41,22 @@ export interface SelectAttribute extends BaseAttribute {
   options: string[];
 }
 
+export interface ClimateAttribute extends BaseAttribute {
+  type: DeviceType.climate;
+  optimistic: boolean;
+  fan_modes: string[];
+  max_humidity: number;
+  min_humidity: number;
+  max_temp: number;
+  min_temp: number;
+  modes: string[];
+  precision: number;
+  swing_modes: string[];
+  temperature_unit: string;
+  temp_step: number;
+  payload_on: string;
+  payload_off: string;
+  preset_modes: string[];
+}
+
 export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute;
