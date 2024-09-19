@@ -3,9 +3,16 @@
 
 name: Node.js Package
 
+# on:
+#  release:
+#    types: [created]
+
 on:
-  release:
-    types: [created]
+  workflow_run:
+    workflows: ['Publish release']
+    types: [completed]
+    branches:
+      - 'main'
 
 jobs:
   build:

@@ -1,4 +1,4 @@
-import { Attribute, ButtonAttribute, NumberAttribute, SceneAttribute, SelectAttribute, SwitchAttribute } from './attributes/device-attributes';
+import { Attribute, ButtonAttribute, ClimateAttribute, NumberAttribute, SceneAttribute, SelectAttribute, SwitchAttribute } from './attributes/device-attributes';
 import { Provider } from './provider';
 
 export interface Device {
@@ -16,4 +16,13 @@ export interface Device {
   onSelectChanged?(attribute: SelectAttribute, value: string): Promise<void>;
   onNumberChanged?(attribute: NumberAttribute, value: number): Promise<void>;
   onSwitchChanged?(attribute: SwitchAttribute, value: boolean): Promise<void>;
+
+  /* Climate methods */
+  onHvacModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onClimateModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onClimatePresetModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onClimateFanModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onClimateSwingModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onPowerChanged?(attribute: ClimateAttribute, value: boolean): Promise<void>;
+  onTargetTemperatureChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
 }

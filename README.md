@@ -1,4 +1,5 @@
 # quantumhub-sdk
+version 1
 
 The package you need to create a module for quantumhub.
 
