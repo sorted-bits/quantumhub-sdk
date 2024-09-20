@@ -8,4 +8,5 @@ export interface BaseAttribute {
   device_class?: DeviceClass;
   unit_of_measurement?: string;
   state_class?: string;
+  unavailability_value?: string;
 }

@@ -2,19 +2,78 @@ import { Attribute, ButtonAttribute, ClimateAttribute, NumberAttribute, SceneAtt
 import { Provider } from './provider';
 
 export interface Device {
+  /**
+   * Called after the package is loaded from disk and the provider is initialized.
+   *
+   * @param provider
+   * @returns
+   */
   init(provider: Provider): Promise<boolean>;
+
+  /**
+   * Called when the device is being started. After the init method.
+   */
   start(): Promise<void>;
+
+  /**
+   * Called when the device is being stopped.
+   */
   stop(): Promise<void>;
+
+  /**
+   * Called when the device is being destroyed.
+   */
   destroy(): Promise<void>;
 
-  onMessage?(topic: string, message: Buffer): Promise<void>;
-
+  /**
+   * Called when the value of an attribute is changed.
+   * For example a value is changed by the Home Assistant MQTT integration.
+   *
+   * @param attribute
+   * @param value
+   */
   valueChanged(attribute: Attribute, value: any): Promise<void>;
 
+  /**
+   * Called when a message is received on an MQTT topic the device is subscribed to
+   * through the internal MQTT client.
+   *
+   * @param topic
+   * @param message
+   */
+  onMessage?(topic: string, message: Buffer): Promise<void>;
+
+  /**
+   * Called when a scene is triggered.
+   *
+   * @param attribute
+   */
   onSceneTriggered?(attribute: SceneAttribute): Promise<void>;
+
+  /**
+   * Called when a button is pressed.
+   */
   onButtonPressed?(attribute: ButtonAttribute): Promise<void>;
+
+  /**
+   * Called when a select is changed.
+   *
+   * @param attribute
+   * @param value
+   */
   onSelectChanged?(attribute: SelectAttribute, value: string): Promise<void>;
+
+  /**
+   * Called when a number is changed.
+   *
+   * @param attribute
+   * @param value
+   */
   onNumberChanged?(attribute: NumberAttribute, value: number): Promise<void>;
+
+  /**
+   * Called when a switch is changed.
+   */
   onSwitchChanged?(attribute: SwitchAttribute, value: boolean): Promise<void>;
 
   /* Climate methods */
