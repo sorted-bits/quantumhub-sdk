@@ -63,7 +63,7 @@ export interface Provider {
    * @returns {NodeJS.Timeout} The timeout ID
    * @memberof Provider
    */
-  setTimeout(callback: () => void, timeout: number): NodeJS.Timeout;
+  setTimeout(callback: () => Promise<void>, timeout: number): Promise<NodeJS.Timeout>;
 
   /**
    * Clears a timeout that was previously set
