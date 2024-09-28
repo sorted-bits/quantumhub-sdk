@@ -31,5 +31,5 @@ export interface Cache {
      * @returns {Promise<{}>} Object containing all keys and values
      * @memberof Provider
      */
-    all(): Promise<{}>;
+    all(): Promise<{ [key: string]: any }>;
 }
