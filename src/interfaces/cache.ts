@@ -28,8 +28,8 @@ export interface Cache {
     /**
      * Gets all values from the cache
      *
-     * @returns {Promise<any[]>} The values
+     * @returns {Promise<{}>} Object containing all keys and values
      * @memberof Provider
      */
-    all(): Promise<any[]>;
+    all(): Promise<{}>;
 }
