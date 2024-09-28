@@ -1,6 +1,33 @@
 import { Logger } from './logger';
+import { Cache } from './cache';
+import { MQTT } from './mqtt';
+import { Timeout } from './timeout';
 
 export interface Provider {
+  /**
+   * Access to provider specific cache
+   *
+   * @type {Cache}
+   * @memberof Provider
+   */
+  get cache(): Cache;
+
+  /**
+   * Access to provider specific MQTT client
+   *
+   * @type {MQTT}
+   * @memberof Provider
+   */
+  get mqtt(): MQTT;
+
+  /**
+   * Access to provider specific timeout manager
+   *
+   * @type {Timeout}
+   * @memberof Provider
+   */
+  get timeout(): Timeout;
+
   /**
    * The logger created specific for this device
    *
@@ -33,43 +60,4 @@ export interface Provider {
    * @memberof Provider
    */
   getConfig(): any;
-
-  /**
-   * Subscribes directly to a MQTT topic
-   *
-   * @param {string} topic The topic to subscribe to
-   * @returns {Promise<void>}
-   * @memberof Provider
-   */
-  subscribeToTopic(topic: string): Promise<void>;
-
-  /**
-   * Publishes a message to a MQTT topic
-   *
-   * @param {string} topic The topic to publish to
-   * @param {string} message The message to publish
-   * @param {boolean} retain Whether the message should be retained
-   * @returns {Promise<void>}
-   * @memberof Provider
-   */
-  publishToTopic(topic: string, message: string, retain: boolean): Promise<void>;
-
-  /**
-   * Sets a timeout that will be cleared when the timeout is triggered
-   * All these timeouts are stored in the provider and will be cleared when the device is stopped
-   *
-   * @param {() => void} callback The callback to trigger
-   * @param {number} timeout The timeout in milliseconds
-   * @returns {NodeJS.Timeout} The timeout ID
-   * @memberof Provider
-   */
-  setTimeout(callback: () => Promise<void>, timeout: number): NodeJS.Timeout;
-
-  /**
-   * Clears a timeout that was previously set
-   *
-   * @param {NodeJS.Timeout} timeout The timeout ID
-   * @memberof Provider
-   */
-  clearTimeout(timeout: NodeJS.Timeout): void;
 }
