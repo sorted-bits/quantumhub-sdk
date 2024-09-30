@@ -3,12 +3,10 @@ import { BaseAttribute } from './base-attribute';
 
 export interface ButtonAttribute extends BaseAttribute {
   type: DeviceType.button;
-  payload_press: string;
 }
 
 export interface SceneAttribute extends BaseAttribute {
   type: DeviceType.scene;
-  payload_on: string;
 }
 
 export interface DeviceAutomationAttribute extends BaseAttribute {
@@ -23,8 +21,6 @@ export interface DeviceTrackerAttribute extends BaseAttribute {
 
 export interface SwitchAttribute extends BaseAttribute {
   type: DeviceType.switch;
-  payload_on: string;
-  payload_off: string;
   optimistic: boolean;
 }
 
@@ -48,8 +44,6 @@ export interface ClimateAttribute extends BaseAttribute {
   has_swingmode: boolean;
   has_presetmode: boolean;
   has_humidity_control: boolean;
-  payload_on: string;
-  payload_off: string;
 }
 
 export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute | ClimateAttribute;
