@@ -84,4 +84,5 @@ export interface Device {
   onClimateSwingModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
   onPowerChanged?(attribute: ClimateAttribute, value: boolean): Promise<void>;
   onTargetTemperatureChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
+  onTargetHumidityChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
 }
