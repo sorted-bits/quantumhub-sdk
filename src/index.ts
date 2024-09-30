@@ -5,6 +5,7 @@ export { Provider } from './interfaces/provider';
 export { MQTT } from './interfaces/mqtt';
 export { Timeout } from './interfaces/timeout';
 export { Cache } from './interfaces/cache';
+export { Definition } from './interfaces/definition';
 
 export * from './interfaces/attributes/device-attributes';
 

@@ -36,6 +36,8 @@ export interface Provider {
    */
   get logger(): Logger;
 
+  get definition(): Definition;
+
   /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
    *
