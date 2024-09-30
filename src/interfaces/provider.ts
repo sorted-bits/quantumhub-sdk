@@ -2,6 +2,7 @@ import { Logger } from './logger';
 import { Cache } from './cache';
 import { MQTT } from './mqtt';
 import { Timeout } from './timeout';
+import { Definition } from './definition';
 
 export interface Provider {
   /**
@@ -36,6 +37,12 @@ export interface Provider {
    */
   get logger(): Logger;
 
+  /**
+   * The definition of the device
+   *
+   * @type {Definition}
+   * @memberof Provider
+   */
   get definition(): Definition;
 
   /**
