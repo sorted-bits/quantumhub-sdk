@@ -44,6 +44,8 @@ export interface ClimateAttribute extends BaseAttribute {
   has_swingmode: boolean;
   has_presetmode: boolean;
   has_humidity_control: boolean;
+  has_mode_control: boolean;
+  has_power_control: boolean;
 }
 
 export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute | ClimateAttribute;

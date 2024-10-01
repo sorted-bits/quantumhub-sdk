@@ -35,6 +35,14 @@ export interface Device {
   valueChanged(attribute: Attribute, value: any): Promise<void>;
 
   /**
+   * Called when the power command is changed.
+   *
+   * @param attribute
+   * @param value
+   */
+  onPowerCommandChanged?(attribute: Attribute, value: boolean): Promise<void>;
+
+  /**
    * Called when a message is received on an MQTT topic the device is subscribed to
    * through the internal MQTT client.
    *
@@ -85,4 +93,5 @@ export interface Device {
   onPowerChanged?(attribute: ClimateAttribute, value: boolean): Promise<void>;
   onTargetTemperatureChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
   onTargetHumidityChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
+
 }
