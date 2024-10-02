@@ -9,5 +9,7 @@ export interface Definition {
     description?: string;
     version?: string;
 
+    config_path: string;
+
     attributes: Attribute[];
 }
