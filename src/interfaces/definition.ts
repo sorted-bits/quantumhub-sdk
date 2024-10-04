@@ -4,6 +4,7 @@ export interface Definition {
     path: string;
 
     name: string;
+    identifier: string;
     entry: string;
     author?: string;
     description?: string;
