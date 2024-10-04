@@ -10,6 +10,7 @@ export interface Definition {
     version?: string;
 
     config_path: string;
+    repository?: string;
 
     attributes: Attribute[];
 }
