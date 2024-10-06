@@ -2,7 +2,7 @@ import { Logger } from './logger';
 import { Cache } from './cache';
 import { MQTT } from './mqtt';
 import { Timeout } from './timeout';
-import { Definition } from './definition';
+import { PackageDefinition } from './package-definition';
 
 export interface Provider {
   /**
@@ -40,10 +40,10 @@ export interface Provider {
   /**
    * The definition of the device
    *
-   * @type {Definition}
+   * @type {PackageDefinition}
    * @memberof Provider
    */
-  get definition(): Definition;
+  get definition(): PackageDefinition;
 
   /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
