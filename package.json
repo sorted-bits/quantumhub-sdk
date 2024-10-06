@@ -1,6 +1,6 @@
 {
   "name": "quantumhub-sdk",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Everything needed for your module to work with QuantumHub",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
