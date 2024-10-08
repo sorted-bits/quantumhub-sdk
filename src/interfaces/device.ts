@@ -85,7 +85,7 @@ export interface Device {
   onSwitchChanged?(attribute: SwitchAttribute, value: boolean): Promise<void>;
 
   /* Climate methods */
-  onHvacModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
+  onModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
   onClimateModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
   onClimatePresetModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
   onClimateFanModeChanged?(attribute: ClimateAttribute, value: string): Promise<void>;
@@ -93,5 +93,4 @@ export interface Device {
   onPowerChanged?(attribute: ClimateAttribute, value: boolean): Promise<void>;
   onTargetTemperatureChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
   onTargetHumidityChanged?(attribute: ClimateAttribute, value: number): Promise<void>;
-
 }
