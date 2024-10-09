@@ -9,9 +9,8 @@ export interface SceneAttribute extends BaseAttribute {
   type: DeviceType.scene;
 }
 
-export interface DeviceAutomationAttribute extends BaseAttribute {
-  type: DeviceType.device_automation;
-  payload: string;
+export interface LightAttribute extends BaseAttribute {
+  type: DeviceType.light;
 }
 
 export interface DeviceTrackerAttribute extends BaseAttribute {
@@ -56,4 +55,4 @@ export interface ClimateAttribute extends BaseAttribute {
   modes?: string[];
 }
 
-export type Attribute = BaseAttribute | SwitchAttribute | DeviceAutomationAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute | ClimateAttribute;
+export type Attribute = BaseAttribute | SwitchAttribute | LightAttribute | NumberAttribute | SelectAttribute | ButtonAttribute | DeviceTrackerAttribute | SceneAttribute | ClimateAttribute;
