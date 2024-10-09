@@ -10,4 +10,5 @@ export interface BaseAttribute {
   state_class?: string;
   availability?: boolean;
   unavailability_value?: string;
+  enabled_by_default?: boolean;
 }
