@@ -51,11 +51,4 @@ export interface Device {
    * @param message
    */
   onMessage?(topic: string, message: Buffer): Promise<void>;
-
-
-
-
-
-
-
 }

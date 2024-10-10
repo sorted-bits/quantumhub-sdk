@@ -3,8 +3,8 @@ import { LightColor } from "../light";
 import { Device } from "./device";
 
 export interface LightDevice extends Device {
-    onPowerChanged(attribute: LightAttribute, value: boolean): Promise<void>;
-    onBrightnessChanged?(attribute: LightAttribute, value: number): Promise<void>;
-    onColorChanged?(attribute: LightAttribute, value: LightColor): Promise<void>;
-    onEffectChanged?(attribute: LightAttribute, value: string): Promise<void>;
+    onLightPowerChanged(attribute: LightAttribute, value: boolean): Promise<void>;
+    onLightBrightnessChanged?(attribute: LightAttribute, value: number): Promise<void>;
+    onLightColorChanged?(attribute: LightAttribute, value: LightColor): Promise<void>;
+    onLightEffectChanged?(attribute: LightAttribute, value: string): Promise<void>;
 }
