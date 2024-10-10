@@ -1,4 +1,4 @@
-import { Attribute } from "./attributes/device-attributes";
+import { Attribute } from "../attributes/attribute";
 
 export interface PackageDefinition {
     // Used to store the install path of the package, determined by QuantumHub

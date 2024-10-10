@@ -1,5 +1,4 @@
-import { DeviceClass } from '../../enums/device-class';
-import { DeviceType } from '../../enums/device-type';
+import { DeviceClass, DeviceType } from "../../enums";
 
 export interface BaseAttribute {
   key: string;
