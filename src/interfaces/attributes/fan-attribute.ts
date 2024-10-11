@@ -19,4 +19,7 @@ export interface FanAttribute extends BaseAttribute {
 
     // Whether this fan supports direction.
     has_direction?: boolean;
+
+    // Whether this fan supports speed control.
+    has_speed_control?: boolean;
 }
