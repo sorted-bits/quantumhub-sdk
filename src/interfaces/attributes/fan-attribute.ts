@@ -13,4 +13,10 @@ export interface FanAttribute extends BaseAttribute {
 
     // The minimum speed this fan can run at.
     speed_range_min?: number;
+
+    // Whether this fan supports oscillation.
+    has_oscillation?: boolean;
+
+    // Whether this fan supports direction.
+    has_direction?: boolean;
 }
