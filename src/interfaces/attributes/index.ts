@@ -7,5 +7,6 @@ export { NumberAttribute } from './number-attribute';
 export { SceneAttribute } from './scene-attribute';
 export { SelectAttribute } from './select-attribute';
 export { SwitchAttribute } from './switch-attribute';
+export { FanAttribute } from './fan-attribute';
 
 export { Attribute } from './attribute';
