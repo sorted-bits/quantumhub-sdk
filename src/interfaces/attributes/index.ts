@@ -1,12 +1,12 @@
-export { BaseAttribute } from './base-attribute';
+export { BaseAttribute, BaseAttributeWithState } from './base-attribute';
 export { ButtonAttribute } from './button-attribute';
-export { ClimateAttribute } from './climate-attribute';
-export { DeviceTrackerAttribute } from './device-tracker-attribute';
-export { LightAttribute } from './light-attribute';
-export { NumberAttribute } from './number-attribute';
+export { ClimateAttribute, ClimateState } from './climate-attribute';
+export { DeviceTrackerAttribute, DeviceTrackerState } from './device-tracker-attribute';
+export { LightAttribute, LightState } from './light-attribute';
+export { NumberAttribute, NumberState } from './number-attribute';
 export { SceneAttribute } from './scene-attribute';
-export { SelectAttribute } from './select-attribute';
-export { SwitchAttribute } from './switch-attribute';
-export { FanAttribute } from './fan-attribute';
+export { SelectAttribute, SelectState } from './select-attribute';
+export { SwitchAttribute, SwitchState } from './switch-attribute';
+export { FanAttribute, FanState } from './fan-attribute';
 
 export { Attribute } from './attribute';

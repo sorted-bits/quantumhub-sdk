@@ -1,7 +1,24 @@
 import { DeviceType } from "../../enums/device-type";
-import { BaseAttribute } from "./base-attribute";
+import { BaseAttributeWithState } from "./base-attribute";
 
-export interface ClimateAttribute extends BaseAttribute {
+export interface ClimateState {
+    current_temperature?: number;
+    target_temperature?: number;
+    current_humidity?: number;
+    target_humidity?: number;
+    swing_mode?: string;
+    preset_mode?: string;
+    mode?: string;
+    fan_mode?: string;
+    precision?: number;
+    min_temp?: number;
+    max_temp?: number;
+    temp_step?: number;
+    max_humidity?: number;
+    min_humidity?: number;
+}
+
+export interface ClimateAttribute extends BaseAttributeWithState {
     type: DeviceType.climate;
     optimistic: boolean;
 
@@ -18,4 +35,6 @@ export interface ClimateAttribute extends BaseAttribute {
     fan_modes?: string[];
     swing_modes?: string[];
     modes?: string[];
+
+    stateDefinition: ClimateState;
 }

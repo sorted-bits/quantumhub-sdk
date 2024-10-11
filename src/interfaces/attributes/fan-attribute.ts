@@ -1,7 +1,15 @@
 import { DeviceType } from "../../enums";
-import { BaseAttribute } from "./base-attribute";
+import { BaseAttribute, BaseAttributeWithState } from "./base-attribute";
 
-export interface FanAttribute extends BaseAttribute {
+export interface FanState {
+    state?: boolean;
+    percentage?: number;
+    direction?: string;
+    preset_mode?: string;
+    oscillation?: string;
+}
+
+export interface FanAttribute extends BaseAttributeWithState {
     type: DeviceType.fan;
 
     // List of preset modes this fan is capable of running at. 
@@ -22,4 +30,6 @@ export interface FanAttribute extends BaseAttribute {
 
     // Whether this fan supports speed control.
     has_speed_control?: boolean;
+
+    stateDefinition: FanState;
 }

@@ -1,9 +1,18 @@
 import { DeviceType } from "../../enums/device-type";
-import { BaseAttribute } from "./base-attribute";
+import { LightColor } from "../light";
+import { BaseAttribute, BaseAttributeWithState } from "./base-attribute";
+
+export interface LightState {
+    state?: boolean;
+    brightness?: number;
+    color_mode?: string;
+    color?: LightColor;
+    effect?: string;
+}
 
 // JSON Schema for Light MQTT Configuration
 // https://www.home-assistant.io/integrations/light.mqtt/#json-schema---configuration
-export interface LightAttribute extends BaseAttribute {
+export interface LightAttribute extends BaseAttributeWithState {
     type: DeviceType.light;
 
     // Flag that defines if the light works in optimistic mode.
@@ -39,4 +48,6 @@ export interface LightAttribute extends BaseAttribute {
 
     // Defines the maximum white level (i.e., 100%) of the MQTT device. This is used when setting the light to white mode.
     white_scale?: number;
+
+    stateDefinition: LightState;
 }

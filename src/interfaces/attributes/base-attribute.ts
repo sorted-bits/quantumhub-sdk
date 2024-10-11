@@ -11,3 +11,7 @@ export interface BaseAttribute {
   unavailability_value?: string;
   enabled_by_default?: boolean;
 }
+
+export interface BaseAttributeWithState extends BaseAttribute {
+  stateDefinition: any;
+}

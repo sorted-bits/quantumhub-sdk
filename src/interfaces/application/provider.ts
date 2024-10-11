@@ -3,6 +3,8 @@ import { Cache } from './cache';
 import { MQTT } from './mqtt';
 import { Timeout } from './timeout';
 import { PackageDefinition } from './package-definition';
+import { BaseAttribute } from '../attributes';
+import { BaseAttributeWithState } from '../attributes/base-attribute';
 
 export interface Provider {
   /**
@@ -51,8 +53,18 @@ export interface Provider {
    * @param {string} attribute The name of the attribute
    * @param {*} value The value of the attribute
    * @memberof Provider
+   * @deprecated Use setAttributeState instead
    */
   setAttributeValue(attribute: string, value: any): Promise<void>;
+
+  /**
+   * Stores the value of the attribute in the state manager and publishes the changes to MQTT
+   *
+   * @param {T} attribute The attribute to set the state for
+   * @param {T['stateDefinition']} state The state to set for the attribute, can be a partial state
+   * @memberof Provider
+   */
+  setAttributeState<T extends BaseAttributeWithState>(attribute: T, state: T['stateDefinition']): Promise<void>;
 
   /**
    * Sets the availability of the device and publishes the changes to MQTT
