@@ -81,4 +81,13 @@ export interface Provider {
    * @memberof Provider
    */
   getConfig(): any;
+
+  /**
+   * Returns the attribute with the given name
+   *
+   * @param {string} name The name of the attribute
+   * @returns {T | undefined} The attribute or undefined if it does not exist
+   * @memberof Provider
+   */
+  getAttribute<T extends BaseAttribute>(name: string): T | undefined;
 }
