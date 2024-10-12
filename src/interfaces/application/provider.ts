@@ -50,21 +50,13 @@ export interface Provider {
   /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
    *
-   * @param {string} attribute The name of the attribute
-   * @param {*} value The value of the attribute
-   * @memberof Provider
-   * @deprecated Use setAttributeState instead
-   */
-  setAttributeValue(attribute: string, value: any): Promise<void>;
-
-  /**
-   * Stores the value of the attribute in the state manager and publishes the changes to MQTT
-   *
    * @param {T} attribute The attribute to set the state for
    * @param {T['stateDefinition']} state The state to set for the attribute, can be a partial state
+   * @param {object} options Options for the operation
+   * @param {boolean} options.overwrite Whether to fully overwrite the existing state, otherwise only the provided keys are updated
    * @memberof Provider
    */
-  setAttributeState<T extends BaseAttributeWithState>(attribute: T, state: T['stateDefinition']): Promise<void>;
+  setAttributeState<T extends BaseAttributeWithState>(attribute: T, state: T['stateDefinition'], options?: { overwrite?: boolean }): Promise<void>;
 
   /**
    * Sets the availability of the device and publishes the changes to MQTT
