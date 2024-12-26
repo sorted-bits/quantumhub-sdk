@@ -51,7 +51,7 @@ export interface Provider {
    * Restart the process
    * @memberof Provider
    */
-  get restart(): Promise<void>;
+  restart(): Promise<void>;
 
   /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
