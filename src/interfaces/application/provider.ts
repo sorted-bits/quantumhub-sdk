@@ -48,6 +48,12 @@ export interface Provider {
   get definition(): PackageDefinition;
 
   /**
+   * Restart the process
+   * @memberof Provider
+   */
+  get restart(): Promise<void>;
+
+  /**
    * Stores the value of the attribute in the state manager and publishes the changes to MQTT
    *
    * @param {T} attribute The attribute to set the state for
