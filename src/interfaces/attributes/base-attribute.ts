@@ -10,6 +10,7 @@ export interface BaseAttribute {
   availability?: boolean;
   unavailability_value?: string;
   enabled_by_default?: boolean;
+  icon?: string;
 }
 
 export interface BaseAttributeWithState extends BaseAttribute {
